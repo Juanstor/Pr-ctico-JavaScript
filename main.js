@@ -14,15 +14,12 @@ const cartAside2 = document.querySelector('.cartAside')
 
 // functions (same order)
 menuEmail.addEventListener('click', toggleDesktopMenu)
-
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive');
 }
 
 
-
 burgerMenu.addEventListener('click', toggleMobileMenu)
-
 function toggleMobileMenu() {
 
     const isCartAsideClosed = cartAside2.classList.contains('inactive');
@@ -34,9 +31,7 @@ function toggleMobileMenu() {
 }
 
 
-
 cartMenuIcon.addEventListener('click', toggleCartAside)
-
 function toggleCartAside() {
 
     const isMobileMenuClosed = mobileMenu.classList.contains ('inactive');
@@ -47,3 +42,4 @@ function toggleCartAside() {
     cartAside2.classList.toggle('inactive')
 }
 
+const productList = [];
