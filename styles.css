@@ -175,8 +175,8 @@ nav {
     font-size: var(--sm);
 }
 
-/* Aside - product detail */
-.product-detail {
+/* Aside - cartAside */
+.cartAside {
     background-color: var(--white);
 
     width: 360px;
@@ -293,7 +293,7 @@ nav {
 
 
     /* aside */
-    .product-detail {
+    .cartAside {
         width: 100%;
     }
     .my-order-container {
