@@ -70,6 +70,7 @@ nav {
     margin-right: 12px;
 }
 .navbar-shopping-card {
+    cursor: pointer;
     position: relative;
 }
 .navbar-shopping-card div {
@@ -178,6 +179,8 @@ nav {
 /* Aside - cartAside */
 .cartAside {
     background-color: var(--white);
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
 
     width: 360px;
     padding: 0 24px;
@@ -185,6 +188,7 @@ nav {
 
     position: absolute;
     right: 0;
+    top: 60px;
 }
 .my-order {
     width: 100%;
