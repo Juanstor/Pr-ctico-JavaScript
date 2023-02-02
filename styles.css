@@ -286,7 +286,7 @@ nav {
 }
 
 /* Main detail */
-        .mainDetail {
+        .main-detail {
             width: 360px;
             position: absolute;
             right: 0;
@@ -448,7 +448,7 @@ nav {
         width: 100%;
     }
 
-    .mainDetail {
+    .main-detail {
         width: 100%;
     }
 

@@ -1,52 +1,63 @@
-
-// Desktop Menu
+// CONST
+// Desktop Menu CONST
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 
-// Mobile Desktop - Burguer menu
+// Mobile Desktop - Burguer menu CONST
 const burgerMenu = document.querySelector('.menu')
 const mobileMenu = document.querySelector('.mobile-menu')
 
-// Cart Menu
+// Cart Menu CONST
 const cartMenuIcon = document.querySelector('.navbar-shopping-card')
 const cartAside2 = document.querySelector('.cartAside')
 
-// Main container or CardsContainers
+// Main container or CardsContainers CONST
 const cardsContainer = document.querySelector('.cards-container');
 
-// functions (same order)
+// Main detail CONST
+const mainDetail = document.querySelector('.main-detail');
+
+
+
+// FUNCTIONS
+// → Desktop Email Menu FUNCTIONS
 menuEmail.addEventListener('click', toggleDesktopMenu)
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive');
+    mobileMenu.classList.add('inactive');
+    cartAside2.classList.add('inactive');
+    mainDetail.classList.add('inactive');
 }
 
-
+// → Mobile Burger Menu FUNCTIONS
 burgerMenu.addEventListener('click', toggleMobileMenu)
 function toggleMobileMenu() {
-
-    const isCartAsideClosed = cartAside2.classList.contains('inactive');
-    if (!isCartAsideClosed) {
-        cartAside2.classList.add('inactive');
-    }
-
-    mobileMenu.classList.toggle('inactive')
+    mobileMenu.classList.toggle('inactive');
+    cartAside2.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    mainDetail.classList.add('inactive');
 }
 
-
+// → Cart Menu FUNCTIONS
 cartMenuIcon.addEventListener('click', toggleCartAside)
 function toggleCartAside() {
-
-    const isMobileMenuClosed = mobileMenu.classList.contains ('inactive');
-    if (!isMobileMenuClosed) {
-        mobileMenu.classList.add('inactive');
-    }
-
-    cartAside2.classList.toggle('inactive')
+    cartAside2.classList.toggle('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    mainDetail.classList.add('inactive');
 }
+
+// → Main detail FUNCTIONS
+function openMainDetail () {
+    mainDetail.classList.remove('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    cartAside2.classList.add('inactive');
+}
+
 
 
 // Creating automatic products for product cards - good practice for use of Backend APIrest
-
 // →array
 const productList = [];
 productList.push({
@@ -81,58 +92,62 @@ productList.push({
 })
 
 // →function
-for (product of productList) {
-    // <div class="product-card">
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-
-    // <img src="https://images.pexels.com/photos/blablabla"></img>
-    const productImg = document.createElement('img');
-    productImg.setAttribute('src', product.image);
-
-    // <div class="product-info">
-    const productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
-
-    // <div>
-    const productInfoDiv = document.createElement('div');
-
-    // <p>$120,00</p>
-    const productPrice = document.createElement('p');
-    productPrice.innerText = '$' + product.price;
+function renderProducts(arr) {
+    for (product of arr) {
+        // <div class="product-card">
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
     
-    // <p>Nintendo</p>
-    const productName = document.createElement('p');
-    productName.innerText = product.name;
+        // <img src="https://images.pexels.com/photos/blablabla"></img>
+        const productImg = document.createElement('img');
+        productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openMainDetail);
     
+        // <div class="product-info">
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
     
-    // <figure>
-    const productInfoFigure = document.createElement('figure');
+        // <div>
+        const productInfoDiv = document.createElement('div');
     
-    // <img src="./icons/bt_add_to_cart.svg">
-    const productImgCart = document.createElement('img');
-    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg')
+        // <p>$120,00</p>
+        const productPrice = document.createElement('p');
+        productPrice.innerText = '$' + product.price;
+        
+        // <p>Nintendo</p>
+        const productName = document.createElement('p');
+        productName.innerText = product.name;
+        
+        
+        // <figure>
+        const productInfoFigure = document.createElement('figure');
+        
+        // <img src="./icons/bt_add_to_cart.svg">
+        const productImgCart = document.createElement('img');
+        productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg')
+        
+        
+        // now, we need to put every element in his father element
+        
+        productInfoDiv.appendChild(productPrice);
+        productInfoDiv.appendChild(productName);
     
+        productInfoFigure.appendChild(productImgCart);
     
-    // now, we need to put every element in his father element
+        productInfo.appendChild(productInfoDiv);
+        productInfo.appendChild(productInfoFigure);
     
-    productInfoDiv.appendChild(productPrice);
-    productInfoDiv.appendChild(productName);
-
-    productInfoFigure.appendChild(productImgCart);
-
-    productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productInfoFigure);
-
-    productCard.appendChild(productImg);
-    productCard.appendChild(productInfo);
-
-    cardsContainer.appendChild(productCard);
-
+        productCard.appendChild(productImg);
+        productCard.appendChild(productInfo);
+    
+        cardsContainer.appendChild(productCard);
+    
+    }
 }
 
+renderProducts(productList);
+
 // Basic layout source, already in "Creating automatic products for product cards" (trash for now)
-{
     /* 
     <div class="cards-container">
     <div class="product-card">
@@ -149,5 +164,5 @@ for (product of productList) {
     </div>
     </div> 
     */
-}
+
 
