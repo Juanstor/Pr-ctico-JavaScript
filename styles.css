@@ -138,11 +138,15 @@ nav {
     background-color: var(--white);
     position: absolute;
     top: 61px;
+    left: 0px;
 
     padding: 20px;
     flex-direction: column;
     justify-content: space-between;
-    height: 94vh;
+    /* height: 94vh; */
+
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
 }
 .mobile-menu div {
     display: flex;
@@ -273,6 +277,7 @@ nav {
     font-size: var(--md);
     font-weight: 900;
     height: 52px;
+    margin-bottom: 20px;
 
     display: flex;
     justify-content: center;
