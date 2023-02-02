@@ -131,7 +131,7 @@ for (product of productList) {
 
 }
 
-// Basic basic layout source
+// Basic layout source, already in "Creating automatic products for product cards" (trash for now)
 {
     /* 
     <div class="cards-container">
@@ -150,3 +150,4 @@ for (product of productList) {
     </div> 
     */
 }
+
