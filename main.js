@@ -54,7 +54,6 @@ function openMainDetail () {
     desktopMenu.classList.add('inactive');
     cartAside2.classList.add('inactive');
 }
-
 closeButtom.addEventListener('click', closingMainDetail)
 function closingMainDetail() {
     mainDetail.classList.add('inactive')
@@ -171,3 +170,53 @@ renderProducts(productList);
     */
 
 
+
+
+
+//VAMOS A GENERAR EL MAIN DETAIL SEGúN EL PRODUCTO QUE LE HAYAMOS HECHO CLICK 
+
+
+// Teoría: Si haces click en la imagen #x. JS primero identifica el src de la imagen cliqueada, y comparara con el array uno por uno para encontrar coincidencia con un if, si lo encuentra, se imprimirá el main-detail desde JS (hardcodeado). 
+
+
+// Estructura a generar en JS
+
+/* <aside class="main-detail inactive">
+<div class="close-buttom">
+    <img src="./icons/icon_close.png" alt="close-buttom">
+</div>
+
+<img src="https://images.pexels.com/photos/9201279/pexels-photo-9201279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product controler">
+<div class="product-detail">
+    <p>$ 60.00 CAD</p>
+    <p>Super Nintendo controler</p>
+    <p>AQUI AGREGAR TEXTO DESCRIPCION CON CHATGPT </p>
+    <button class="primary-button add-to-card-buttom">
+        <img src="./icons/bt_add_to_cart.svg" alt="add-to-cart-icon">
+        Add to cart
+    </button>
+</div> */
+
+
+// aquí una base para poder proceder a lo comentado
+
+/*
+const valorBuscado = event.srcElement.currentSrc;
+console.log(valorBuscado);
+console.log(event.srcElement.currentSrc);
+
+for (const producto of productList) {
+    console.log("producto.image " + producto.image)
+    console.log("valorBuscado " + valorBuscado)
+    if (producto.image == valorBuscado) {
+        console.log("llegue")
+        imgDetalle.src = producto.image;
+        pNombre.innerText = producto.name;
+        pPrecio.innerText = producto.price;
+        pDescription.innerText = producto.description;
+    }   
+}
+
+    productDetailContainer.classList.remove('inactive');
+
+*/
