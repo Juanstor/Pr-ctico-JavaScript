@@ -285,6 +285,7 @@ nav {
     place-items: center;
 }
 
+
 /* Main detail */
         .main-detail {
             width: 360px;
@@ -370,6 +371,7 @@ nav {
             height: 40px;
         }
 
+        
 /* Main and cards containers */
 .cards-container {
     margin-top: 20px;

@@ -16,7 +16,7 @@ const cardsContainer = document.querySelector('.cards-container');
 
 // Main detail CONST
 const mainDetail = document.querySelector('.main-detail');
-
+const closeButtom = document.querySelector('.close-buttom')
 
 
 // FUNCTIONS
@@ -55,6 +55,11 @@ function openMainDetail () {
     cartAside2.classList.add('inactive');
 }
 
+closeButtom.addEventListener('click', closingMainDetail)
+function closingMainDetail() {
+    mainDetail.classList.add('inactive')
+}
+
 
 
 // Creating automatic products for product cards - good practice for use of Backend APIrest
@@ -91,7 +96,7 @@ productList.push({
     image: 'https://images.pexels.com/photos/13316804/pexels-photo-13316804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 alt="product-img'
 })
 
-// →function
+// →Deploy HTML Main content
 function renderProducts(arr) {
     for (product of arr) {
         // <div class="product-card">
