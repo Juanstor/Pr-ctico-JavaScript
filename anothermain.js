@@ -319,3 +319,7 @@ function renderProducts (arr) {
 
 renderProducts(productList);
 
+
+
+// source 
+// https://mgobeaalcoba.github.io/Frontend-Developer-Con-Javascript/
